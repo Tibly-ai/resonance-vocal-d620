@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Resonance Vocal Studio to book a 30-minute trial voice lesson. Find our Portland studio location, weekly availability, and send us a message — we reply within one business day.">
+<title>Contact — Resonance Vocal Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1f1a2e;
+    --plum: #3d2a4f;
+    --plum-deep: #2a1c38;
+    --gold: #c9a256;
+    --gold-soft: #e3c98e;
+    --cream: #faf6ef;
+    --cream-deep: #f2ead9;
+    --white: #ffffff;
+    --gray: #6b6478;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  img { max-width: 100%; }
+
+  .wrap {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 246, 239, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(61, 42, 79, 0.1);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 0;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .brand {
+    text-decoration: none;
+    color: var(--plum);
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .brand .mark {
+    font-family: var(--serif);
+    font-size: 1.65rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .brand .mark span { color: var(--gold); }
+
+  .brand .tag {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--gray);
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  nav a:hover, nav a[aria-current="page"] {
+    color: var(--plum);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ---------- Page hero ---------- */
+  .page-hero {
+    background:
+      radial-gradient(ellipse 900px 500px at 75% 20%, rgba(201, 162, 86, 0.22), transparent 65%),
+      radial-gradient(ellipse 700px 600px at 15% 90%, rgba(120, 80, 160, 0.28), transparent 60%),
+      linear-gradient(160deg, var(--plum-deep) 0%, var(--plum) 55%, #4a3560 100%);
+    color: var(--cream);
+    padding: 5rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 90px;
+    background: var(--cream);
+    clip-path: ellipse(75% 100% at 50% 100%);
+  }
+
+  .page-hero-inner { max-width: 720px; position: relative; }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--gold-soft);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .page-hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.12;
+    margin-bottom: 1.4rem;
+  }
+
+  .page-hero h1 em { font-style: italic; color: var(--gold-soft); }
+
+  .page-hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(250, 246, 239, 0.85);
+    max-width: 560px;
+  }
+
+  /* ---------- Section basics ---------- */
+  section { padding: 5.5rem 0; }
+
+  .section-head {
+    max-width: 640px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+  }
+
+  .section-head .eyebrow { color: var(--gold); }
+
+  .section-head h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--plum);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .section-head p { color: var(--gray); }
+
+  /* ---------- Trial lesson steps ---------- */
+  .trial { padding-top: 4.5rem; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .step {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 2.25rem 1.9rem;
+    border: 1px solid rgba(61, 42, 79, 0.08);
+    box-shadow: 0 2px 12px rgba(42, 28, 56, 0.05);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(42, 28, 56, 0.12);
+  }
+
+  .step .num-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--plum-deep);
+    margin-bottom: 1.4rem;
+  }
+
+  .step h3 {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--plum);
+    margin-bottom: 0.6rem;
+  }
+
+  .step p { color: var(--gray); font-size: 0.95rem; }
+
+  .trial-note {
+    max-width: 640px;
+    margin: 2.75rem auto 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--gray);
+  }
+
+  .trial-note strong { color: var(--plum); }
+
+  /* ---------- Form section ---------- */
+  .form-section { background: var(--cream-deep); }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-form {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 2.5rem 2.25rem;
+    border: 1px solid rgba(61, 42, 79, 0.08);
+    box-shadow: 0 2px 12px rgba(42, 28, 56, 0.05);
+  }
+
+  .contact-form h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--plum);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-form > p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .field { margin-bottom: 1.3rem; }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem;
+  }
+
+  label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--plum);
+    margin-bottom: 0.4rem;
+  }
+
+  label .optional {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--gray);
+  }
+
+  input, select, textarea {
+    width: 100%;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1px solid rgba(61, 42, 79, 0.18);
+    border-radius: 8px;
+    padding: 0.75rem 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 162, 86, 0.25);
+  }
+
+  textarea { resize: vertical; min-height: 130px; }
+
+  fieldset {
+    border: none;
+    margin-bottom: 1.3rem;
+  }
+
+  fieldset legend {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--plum);
+    margin-bottom: 0.6rem;
+  }
+
+  .radio-row { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+  .radio-row label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.92rem;
+    color: var(--ink);
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  .radio-row input[type="radio"] {
+    width: auto;
+    accent-color: var(--gold);
+    cursor: pointer;
+  }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.9rem 2.1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    border: none;
+    cursor: pointer;
+    font-family: var(--sans);
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--plum-deep);
+  }
+
+  .btn-gold:hover {
+    background: var(--gold-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(42, 28, 56, 0.2);
+  }
+
+  .form-footnote {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: 1rem;
+  }
+
+  /* ---------- Sidebar info cards ---------- */
+  .side-stack { display: flex; flex-direction: column; gap: 1.75rem; }
+
+  .info-card {
+    background: linear-gradient(150deg, var(--plum) 0%, var(--plum-deep) 100%);
+    color: var(--cream);
+    border-radius: 14px;
+    padding: 2.2rem 2rem;
+  }
+
+  .info-card h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--gold-soft);
+    margin-bottom: 1.2rem;
+  }
+
+  .info-card ul { list-style: none; }
+
+  .info-card li {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    color: rgba(250, 246, 239, 0.9);
+  }
+
+  .info-card li .dot { color: var(--gold); flex-shrink: 0; }
+
+  .info-card a { color: var(--gold-soft); text-decoration: none; }
+  .info-card a:hover { text-decoration: underline; }
+
+  .info-card.light {
+    background: var(--white);
+    color: var(--ink);
+    border: 1px solid rgba(61, 42, 79, 0.08);
+    box-shadow: 0 2px 12px rgba(42, 28, 56, 0.05);
+  }
+
+  .info-card.light h3 { color: var(--plum); }
+  .info-card.light li { color: var(--gray); }
+
+  /* ---------- Location & hours ---------- */
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .map-visual {
+    position: relative;
+    min-height: 340px;
+    border-radius: 16px;
+    background:
+      radial-gradient(circle at 70% 25%, rgba(201, 162, 86, 0.35), transparent 55%),
+      linear-gradient(150deg, var(--plum) 0%, var(--plum-deep) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .map-visual .pin {
+    font-family: var(--serif);
+    font-size: 8rem;
+    color: rgba(250, 246, 239, 0.18);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .map-visual .address-card {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background: rgba(250, 246, 239, 0.96);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 1.1rem 1.3rem;
+    color: var(--plum);
+  }
+
+  .map-visual .address-card strong {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    display: block;
+  }
+
+  .map-visual .address-card span { font-size: 0.9rem; color: var(--gray); }
+
+  .location-copy h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    color: var(--plum);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .location-copy > p { color: var(--gray); margin-bottom: 1.1rem; }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .hours-table caption {
+    text-align: left;
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--plum);
+    margin-bottom: 0.75rem;
+  }
+
+  .hours-table th, .hours-table td {
+    text-align: left;
+    padding: 0.65rem 0.5rem;
+    border-bottom: 1px solid rgba(61, 42, 79, 0.12);
+  }
+
+  .hours-table th {
+    font-weight: 600;
+    color: var(--plum);
+    width: 40%;
+  }
+
+  .hours-table td { color: var(--gray); }
+
+  .hours-table .closed td, .hours-table .closed th { color: #a89fb5; }
+
+  .hours-table .highlight td {
+    color: var(--plum);
+    font-weight: 500;
+  }
+
+  /* ---------- CTA band ---------- */
+  .cta-band {
+    background:
+      radial-gradient(ellipse 800px 400px at 20% 10%, rgba(201, 162, 86, 0.2), transparent 60%),
+      linear-gradient(150deg, var(--plum-deep), var(--plum));
+    color: var(--cream);
+    text-align: center;
+  }
+
+  .cta-band h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+
+  .cta-band h2 em { font-style: italic; color: var(--gold-soft); }
+
+  .cta-band p {
+    color: rgba(250, 246, 239, 0.82);
+    font-weight: 300;
+    max-width: 540px;
+    margin: 0 auto 2rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--plum-deep);
+    color: rgba(250, 246, 239, 0.65);
+    padding: 3rem 0 2rem;
+    border-top: 1px solid rgba(201, 162, 86, 0.25);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  footer .brand .mark { color: var(--cream); font-size: 1.3rem; }
+
+  .footer-nav {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .footer-nav a {
+    color: rgba(250, 246, 239, 0.7);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-nav a:hover { color: var(--gold-soft); }
+
+  .footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(250, 246, 239, 0.1);
+    font-size: 0.78rem;
+    text-align: center;
+    color: rgba(250, 246, 239, 0.45);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .form-grid, .location-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .field-row { grid-template-columns: 1fr; gap: 0; }
+    .field-row .field { margin-bottom: 1.3rem; }
+    .map-visual { min-height: 280px; }
+    .page-hero { padding: 3.5rem 0 5.5rem; }
+    section { padding: 4rem 0; }
+    nav ul { gap: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="mark">Resonance<span> Vocal Studio</span></span>
+      <span class="tag">Voice · Artistry</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/lessons">Lessons</a></li>
+        <li><a href="/testimonials">Student Stories</a></li>
+        <li><a href="/contact" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero" aria-label="Contact introduction">
+    <div class="wrap page-hero-inner">
+      <span class="eyebrow">Contact</span>
+      <h1>Let's start with a <em>conversation</em> — and a song.</h1>
+      <p>Whether you're ready to book a trial lesson, have a question about our programs, or just want to talk through whether coaching is right for you, we'd love to hear from you. We reply to every message within one business day.</p>
+    </div>
+  </section>
+
+  <section class="trial" aria-labelledby="trial-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Book a Trial Lesson</span>
+        <h2 id="trial-heading">Your first lesson, in three easy steps</h2>
+        <p>The 30-minute trial lesson is a relaxed, no-pressure introduction — $35, applied toward your first package if you continue. Available in-studio or online.</p>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <div class="num-badge" aria-hidden="true">1</div>
+          <h3>Send the form below</h3>
+          <p>Tell us a little about your singing background and goals — even "I've never sung outside my car" counts. There are no wrong answers, and no experience is required.</p>
+        </article>
+        <article class="step">
+          <div class="num-badge" aria-hidden="true">2</div>
+          <h3>We'll match a time</h3>
+          <p>Within one business day, we'll reply with two or three trial-lesson slots that fit your schedule, along with directions to the studio or a video link if you're joining online.</p>
+        </article>
+        <article class="step">
+          <div class="num-badge" aria-hidden="true">3</div>
+          <h3>Come sing with us</h3>
+          <p>In your trial, we'll warm up together, listen to where your voice is today, and sketch a plan for where it can go. You'll leave with at least one technique you can use immediately.</p>
+        </article>
+      </div>
+      <p class="trial-note"><strong>Prefer to talk first?</strong> Call us at (503) 555-0187 during studio hours, Tuesday through Saturday. If we're mid-lesson, leave a message and we'll ring you back the same day.</p>
+    </div>
+  </section>
+
+  <section class="form-section" aria-labelledby="form-heading">
+    <div class="wrap form-grid">
+      <form class="contact-form" action="/contact" method="post">
+        <h2 id="form-heading">Send us a message</h2>
+        <p>Fields marked with an asterisk (*) are required. Everything you share stays between us.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Full name *</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="interest">I'm interested in *</label>
+            <select id="interest" name="interest" required>
+              <option value="">Please choose…</option>
+              <option value="trial">Booking a trial lesson</option>
+              <option value="foundations">Foundations of Voice</option>
+              <option value="contemporary">Contemporary &amp; Pop</option>
+              <option value="audition">Audition &amp; Performance Prep</option>
+              <option value="health">Vocal Health &amp; Recovery</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Lesson format *</legend>
+          <div class="radio-row">
+            <label><input type="radio" name="format" value="in-studio" required> In-studio (Portland)</label>
+            <label><input type="radio" name="format" value="online"> Online</label>
+            <label><input type="radio" name="format" value="either"> Either works</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="availability">Your general availability <span class="optional">(optional)</span></label>
+          <input type="text" id="availability" name="availability" placeholder="e.g., weekday evenings, Saturday mornings">
+        </div>
+
+        <div class="field">
+          <label for="message">Tell us about your voice and your goals *</label>
+          <textarea id="message" name="message" required placeholder="Your singing experience (including none!), the styles you love, and what you'd like to work toward."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold">Send Message</button>
+        <p class="form-footnote">We never share your details with anyone, and we don't do mailing-list spam. You'll hear from a real person — usually Mara herself.</p>
+      </form>
+
+      <div class="side-stack">
+        <div class="info-card">
+          <h3>Reach Us Directly</h3>
+          <ul>
+            <li><span class="dot" aria-hidden="true">◆</span><a href="tel:+15035550187">(503) 555-0187</a></li>
+            <li><span class="dot" aria-hidden="true">◆</span><a href="mailto:hello@resonancevocal.studio">hello@resonancevocal.studio</a></li>
+            <li><span class="dot" aria-hidden="true">◆</span><span>412 Harmony Lane, Suite 2B<br>Portland, OR 97214</span></li>
+            <li><span class="dot" aria-hidden="true">◆</span><span>Replies within one business day, Tuesday–Saturday</span></li>
+          </ul>
+        </div>
+        <div class="info-card light">
+          <h3>Good to Know</h3>
+          <ul>
+            <li><span class="dot" aria-hidden="true">◆</span><span>Trial lessons are 30 minutes — $35, credited toward your first package.</span></li>
+            <li><span class="dot" aria-hidden="true">◆</span><span>Students under 16 should have a parent or guardian at the trial lesson.</span></li>
+            <li><span class="dot" aria-hidden="true">◆</span><span>Online lessons run on any laptop or tablet — we'll send simple setup tips beforehand.</span></li>
+            <li><span class="dot" aria-hidden="true">◆</span><span>No long-term contracts, ever. Lessons continue only as long as they're serving you.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="location" aria-labelledby="location-heading">
+    <div class="wrap location-grid">
+      <div class="map-visual" role="img" aria-label="Stylized map illustration marking the studio's Portland location">
+        <span class="pin" aria-hidden="true">⌖</span>
+        <div class="address-card">
+          <strong>Resonance Vocal Studio</strong>
+          <span>412 Harmony Lane, Suite 2B · Portland, OR 97214 · Second floor, above Ledger Coffee Roasters</span>
+        </div>
+      </div>
+      <div class="location-copy">
+        <span class="eyebrow" style="color: var(--gold);">Location &amp; Availability</span>
+        <h2 id="location-heading">Find us in the heart of Southeast Portland</h2>
+        <p>The studio sits on the second floor of the historic Harmony Lane building, a five-minute walk from the Hawthorne Bridge. Street parking is free after 6pm, and there's a paid lot directly across the street. Bus lines 14 and 15 stop within a block.</p>
+        <p>The studio is up one flight of stairs; if stairs are a barrier, let us know and we'll happily arrange your lessons online or at our partner space at ground level.</p>
+        <table class="hours-table">
+          <caption>Weekly Availability</caption>
+          <tbody>
+            <tr class="closed">
+              <th scope="row">Sunday &amp; Monday</th>
+              <td>Closed — the voice rests too</td>
+            </tr>
+            <tr>
+              <th scope="row">Tuesday – Friday</th>
+              <td>10:00am – 7:00pm</td>
+            </tr>
+            <tr>
+              <th scope="row">Saturday</th>
+              <td>10:00am – 4:00pm</td>
+            </tr>
+            <tr class="highlight">
+              <th scope="row">Trial lesson slots</th>
+              <td>Tue &amp; Thu evenings, Sat mornings</td>
+            </tr>
+            <tr class="highlight">
+              <th scope="row">Online lessons</th>
+              <td>All studio hours, any time zone welcome</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <div class="wrap">
+      <span class="eyebrow">One Last Note</span>
+      <h2 id="cta-heading">The hardest part is <em>reaching out</em>. The rest is just singing.</h2>
+      <p>Most of our students tell us they waited years before sending that first message — and that they wish they hadn't. Wherever your voice is today, it's the right place to start.</p>
+      <a class="btn btn-gold" href="#form-heading">Back to the Form</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a class="brand" href="/">
+      <span class="mark">Resonance<span> Vocal Studio</span></span>
+    </a>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/lessons">Lessons</a></li>
+        <li><a href="/testimonials">Student Stories</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; 2025 Resonance Vocal Studio · 412 Harmony Lane, Suite 2B, Portland, OR · All voices welcome.</p>
+  </div>
+</footer>
+
+  <script async src="https://api.tibly.ai/widget/v1.js"></script>
+</body>
+</html>
