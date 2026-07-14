@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Resonance Vocal Studio offers professional voice lessons for singers of every level. Discover your true voice with personalized coaching in technique, performance, and artistry.">
+<title>Resonance Vocal Studio — Find Your True Voice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1f1a2e;
+    --plum: #3d2a4f;
+    --plum-deep: #2a1c38;
+    --gold: #c9a256;
+    --gold-soft: #e3c98e;
+    --cream: #faf6ef;
+    --cream-deep: #f2ead9;
+    --white: #ffffff;
+    --gray: #6b6478;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  img { max-width: 100%; }
+
+  .wrap {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 246, 239, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(61, 42, 79, 0.1);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 0;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .brand {
+    text-decoration: none;
+    color: var(--plum);
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .brand .mark {
+    font-family: var(--serif);
+    font-size: 1.65rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .brand .mark span { color: var(--gold); }
+
+  .brand .tag {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--gray);
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  nav a:hover, nav a[aria-current="page"] {
+    color: var(--plum);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background:
+      radial-gradient(ellipse 900px 500px at 75% 20%, rgba(201, 162, 86, 0.22), transparent 65%),
+      radial-gradient(ellipse 700px 600px at 15% 90%, rgba(120, 80, 160, 0.28), transparent 60%),
+      linear-gradient(160deg, var(--plum-deep) 0%, var(--plum) 55%, #4a3560 100%);
+    color: var(--cream);
+    padding: 6.5rem 0 7rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 90px;
+    background: var(--cream);
+    clip-path: ellipse(75% 100% at 50% 100%);
+  }
+
+  .hero-inner { max-width: 720px; position: relative; }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--gold-soft);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+    line-height: 1.12;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-soft);
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(250, 246, 239, 0.85);
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.9rem 2.1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--plum-deep);
+  }
+
+  .btn-gold:hover {
+    background: var(--gold-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  }
+
+  .btn-ghost {
+    border: 1.5px solid rgba(250, 246, 239, 0.5);
+    color: var(--cream);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--gold-soft);
+    color: var(--gold-soft);
+    transform: translateY(-2px);
+  }
+
+  /* ---------- Section basics ---------- */
+  section { padding: 5.5rem 0; }
+
+  .section-head {
+    max-width: 640px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+  }
+
+  .section-head .eyebrow { color: var(--gold); }
+
+  .section-head h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--plum);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .section-head p { color: var(--gray); }
+
+  /* ---------- Lessons ---------- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 2.25rem 1.9rem;
+    border: 1px solid rgba(61, 42, 79, 0.08);
+    box-shadow: 0 2px 12px rgba(42, 28, 56, 0.05);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(42, 28, 56, 0.12);
+  }
+
+  .card .icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .card h3 {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--plum);
+    margin-bottom: 0.6rem;
+  }
+
+  .card p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+
+  .card .card-link {
+    margin-top: 1.4rem;
+    color: var(--plum);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .card .card-link:hover { color: var(--gold); }
+
+  /* ---------- About ---------- */
+  .about { background: var(--cream-deep); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+    min-height: 380px;
+    border-radius: 16px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(201, 162, 86, 0.35), transparent 55%),
+      linear-gradient(150deg, var(--plum) 0%, var(--plum-deep) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .about-visual .note {
+    font-family: var(--serif);
+    font-size: 9rem;
+    color: rgba(250, 246, 239, 0.18);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .about-visual .quote-card {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background: rgba(250, 246, 239, 0.96);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 1.1rem 1.3rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--plum);
+  }
+
+  .about-copy h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    color: var(--plum);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-copy p { color: var(--gray); margin-bottom: 1.1rem; }
+
+  .stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .stat .num {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gray);
+    margin-top: 0.35rem;
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testimonials { background: var(--cream); }
+
+  .quotes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .quote {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 2.2rem 2rem;
+    border: 1px solid rgba(61, 42, 79, 0.08);
+    box-shadow: 0 2px 12px rgba(42, 28, 56, 0.05);
+    position: relative;
+  }
+
+  .quote::before {
+    content: "\201C";
+    font-family: var(--serif);
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--gold);
+    position: absolute;
+    top: 1rem;
+    left: 1.4rem;
+    opacity: 0.55;
+  }
+
+  .quote blockquote {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--plum);
+    margin: 1.4rem 0 1.3rem;
+    line-height: 1.5;
+  }
+
+  .quote cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .quote cite span {
+    display: block;
+    font-weight: 400;
+    color: var(--gray);
+    font-size: 0.78rem;
+    margin-top: 0.15rem;
+  }
+
+  .center-cta { text-align: center; margin-top: 3rem; }
+
+  .btn-plum {
+    background: var(--plum);
+    color: var(--cream);
+  }
+
+  .btn-plum:hover {
+    background: var(--plum-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(42, 28, 56, 0.25);
+  }
+
+  /* ---------- Contact / CTA ---------- */
+  .contact {
+    background:
+      radial-gradient(ellipse 800px 400px at 20% 10%, rgba(201, 162, 86, 0.2), transparent 60%),
+      linear-gradient(150deg, var(--plum-deep), var(--plum));
+    color: var(--cream);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .contact h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+
+  .contact h2 em { font-style: italic; color: var(--gold-soft); }
+
+  .contact p {
+    color: rgba(250, 246, 239, 0.82);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    max-width: 480px;
+  }
+
+  .contact-details {
+    background: rgba(250, 246, 239, 0.07);
+    border: 1px solid rgba(250, 246, 239, 0.15);
+    border-radius: 14px;
+    padding: 2.2rem 2rem;
+  }
+
+  .contact-details h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.3rem;
+    color: var(--gold-soft);
+  }
+
+  .contact-details ul { list-style: none; }
+
+  .contact-details li {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    padding: 0.55rem 0;
+    font-size: 0.95rem;
+    color: rgba(250, 246, 239, 0.9);
+  }
+
+  .contact-details li .dot {
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .contact-details a { color: var(--gold-soft); text-decoration: none; }
+  .contact-details a:hover { text-decoration: underline; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--plum-deep);
+    color: rgba(250, 246, 239, 0.65);
+    padding: 3rem 0 2rem;
+    border-top: 1px solid rgba(201, 162, 86, 0.25);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  footer .brand .mark { color: var(--cream); font-size: 1.3rem; }
+
+  .footer-nav {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .footer-nav a {
+    color: rgba(250, 246, 239, 0.7);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-nav a:hover { color: var(--gold-soft); }
+
+  .footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(250, 246, 239, 0.1);
+    font-size: 0.78rem;
+    text-align: center;
+    color: rgba(250, 246, 239, 0.45);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-visual { min-height: 300px; }
+    .hero { padding: 4.5rem 0 6rem; }
+    section { padding: 4rem 0; }
+    nav ul { gap: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="mark">Resonance<span> Vocal Studio</span></span>
+      <span class="tag">Voice · Artistry</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/lessons">Lessons</a></li>
+        <li><a href="/testimonials">Student Stories</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-label="Welcome">
+    <div class="wrap hero-inner">
+      <span class="eyebrow">Professional Voice Coaching</span>
+      <h1>Your voice is already there.<br>Let's help it <em>resonate</em>.</h1>
+      <p>At Resonance Vocal Studio, we combine healthy classical technique with contemporary artistry — so whether you're preparing for an audition, fronting a band, or singing for the pure joy of it, you'll sound like the truest version of yourself.</p>
+      <div class="btn-row">
+        <a class="btn btn-gold" href="/contact">Book a Trial Lesson</a>
+        <a class="btn btn-ghost" href="/lessons">Explore Lessons</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="lessons" aria-labelledby="lessons-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What We Offer</span>
+        <h2 id="lessons-heading">Lessons built around your voice, not a formula</h2>
+        <p>Every singer walks in with a different instrument, a different history, and a different goal. Our lesson tracks meet you exactly where you are.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="icon" aria-hidden="true">🎵</div>
+          <h3>Foundations of Voice</h3>
+          <p>For new and returning singers. Master breath support, pitch accuracy, and vocal freedom in a warm, judgment-free environment. Most students sing confidently within their first eight weeks.</p>
+          <a class="card-link" href="/lessons">Learn more →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🎤</div>
+          <h3>Contemporary &amp; Pop</h3>
+          <p>Belt safely, develop your mix, and find a signature sound in pop, R&amp;B, rock, and musical theatre styles. Includes mic technique and stylistic coaching for gigging singers.</p>
+          <a class="card-link" href="/lessons">Learn more →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🎭</div>
+          <h3>Audition &amp; Performance Prep</h3>
+          <p>Targeted coaching for college auditions, theatre callbacks, choir placements, and competitions. Repertoire selection, cut preparation, and nerves-management strategies included.</p>
+          <a class="card-link" href="/lessons">Learn more →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🌱</div>
+          <h3>Vocal Health &amp; Recovery</h3>
+          <p>Gentle, evidence-informed rehabilitation for tired, strained, or changing voices. We work alongside your speech-language pathologist or ENT when needed.</p>
+          <a class="card-link" href="/lessons">Learn more →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="about-heading">
+    <div class="wrap about-grid">
+      <div class="about-visual" role="img" aria-label="Decorative musical illustration with studio motto">
+        <span class="note" aria-hidden="true">♪ ♫</span>
+        <div class="quote-card">"Technique should free the voice — never cage it."</div>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow" style="color: var(--gold);">About the Studio</span>
+        <h2 id="about-heading">Fifteen years of helping singers find their sound</h2>
+        <p>Resonance Vocal Studio was founded by soprano and voice pedagogue Mara Ellison after a decade of performing and teaching across the country. What began as a handful of students in a living room has grown into a full studio serving singers from age nine to ninety.</p>
+        <p>Our approach blends classical bel canto foundations with contemporary voice science — because good singing isn't a mystery, it's a skill. Lessons are available in-studio and online, with flexible scheduling for busy students and working professionals.</p>
+        <div class="stats">
+          <div class="stat">
+            <div class="num">15+</div>
+            <div class="label">Years Teaching</div>
+          </div>
+          <div class="stat">
+            <div class="num">400+</div>
+            <div class="label">Students Coached</div>
+          </div>
+          <div class="stat">
+            <div class="num">92%</div>
+            <div class="label">Audition Success Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" aria-labelledby="stories-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Student Stories</span>
+        <h2 id="stories-heading">Voices that found their resonance</h2>
+        <p>Don't take our word for it — here's what students say after working with us.</p>
+      </div>
+      <div class="quotes">
+        <article class="quote">
+          <blockquote>I came in terrified to sing in front of one person. Six months later I performed a solo at my sister's wedding — and loved every second of it.</blockquote>
+          <cite>Danielle R. <span>Foundations student, 2 years</span></cite>
+        </article>
+        <article class="quote">
+          <blockquote>Mara rebuilt my belt from the ground up. I gig three nights a week now and my voice feels fresher at the end of a set than it used to feel at the start.</blockquote>
+          <cite>Marcus T. <span>Lead vocalist, The Hollow Pines</span></cite>
+        </article>
+        <article class="quote">
+          <blockquote>The audition prep was a game-changer. I got into two of my three top-choice musical theatre programs, with a scholarship at one.</blockquote>
+          <cite>Priya S. <span>BFA Musical Theatre, Class of 2027</span></cite>
+        </article>
+      </div>
+      <div class="center-cta">
+        <a class="btn btn-plum" href="/testimonials">Read More Student Stories</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" aria-labelledby="contact-heading">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Get Started</span>
+        <h2 id="contact-heading">Ready to hear what your voice <em>can really do</em>?</h2>
+        <p>Book a 30-minute trial lesson — in person or online. We'll assess where your voice is today, talk through your goals, and map out a plan to get you there. No pressure, no long-term contracts.</p>
+        <a class="btn btn-gold" href="/contact">Schedule Your Trial Lesson</a>
+      </div>
+      <div class="contact-details">
+        <h3>Visit or Reach Out</h3>
+        <ul>
+          <li><span class="dot" aria-hidden="true">◆</span><span>412 Harmony Lane, Suite 2B<br>Portland, OR 97214</span></li>
+          <li><span class="dot" aria-hidden="true">◆</span><a href="tel:+15035550187">(503) 555-0187</a></li>
+          <li><span class="dot" aria-hidden="true">◆</span><a href="mailto:hello@resonancevocal.studio">hello@resonancevocal.studio</a></li>
+          <li><span class="dot" aria-hidden="true">◆</span><span>Studio hours: Tue–Sat, 10am–7pm<br>Online lessons available worldwide</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a class="brand" href="/">
+      <span class="mark">Resonance<span> Vocal Studio</span></span>
+    </a>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/lessons">Lessons</a></li>
+        <li><a href="/testimonials">Student Stories</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; 2025 Resonance Vocal Studio · 412 Harmony Lane, Suite 2B, Portland, OR · All voices welcome.</p>
+  </div>
+</footer>
+
+  <script async src="https://api.tibly.ai/widget/v1.js"></script>
+</body>
+</html>
